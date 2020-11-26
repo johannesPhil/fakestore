@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:ital,wght@0,200;0,400;1,600&display=swap");
+:root {
+	--orange: #fe660b;
+}
+
+body {
+	margin: 0;
+	font-family: "Raleway", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #fff;
+	line-height: 1.6rem;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: "Raleway", sans-serif;
+}
+/* 032535 - ffb515 - ff9a00 - ff5700 - da4302  */
+
+/* Layout */
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	/* padding: 0 40px; */
+}
+
+.card {
+	width: 250px;
+	height: auto;
+	padding: 30px;
+	box-shadow: rgb(235, 235, 255) 0px 15px 15px -5px;
+	border-radius: 20px;
+	background-color: #fff;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	transform: translateY(0px);
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	-o-transform: translateY(0px);
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+
+.card:hover {
+	box-shadow: #fe640b1f 0px 15px 15px -5px;
+	transform: translateY(-10px);
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	-ms-transform: translateY(-10px);
+	-o-transform: translateY(-10px);
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	grid-row: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.grid-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+/* Form and its elements */
+
+*:focus:not(.focus-visible) {
+	outline: none;
+}
+
+/* Padding */
+
+.p-1 {
+	padding: 1rem;
+}
+.p-2 {
+	padding: 1.5rem;
+}
+.p-3 {
+	padding: 2rem;
+}
+.p-4 {
+	padding: 3rem;
+}
+.p-5 {
+	padding: 4rem;
+}
+
+.px-1 {
+	padding: 0 1rem;
+}
+.px-2 {
+	padding: 0 1.5rem;
+}
+.px-3 {
+	padding: 0 2rem;
+}
+.px-4 {
+	padding: 0 3rem;
+}
+.px-5 {
+	padding: 0 4rem;
+}
+
+.py-1 {
+	padding: 1rem 0;
+}
+.py-2 {
+	padding: 1.5rem 0;
+}
+.py-3 {
+	padding: 2rem 0;
+}
+.py-4 {
+	padding: 3rem 0;
+}
+.py-5 {
+	padding: 4rem 0;
+}
+/* Margin */
+
+.m-1 {
+	margin: 1rem;
+}
+.m-2 {
+	margin: 1.5rem;
+}
+.m-3 {
+	margin: 2rem;
+}
+.m-4 {
+	margin: 3rem;
+}
+.m-5 {
+	margin: 4rem;
+}
+
+.mx-1 {
+	margin: 0 1rem;
+}
+.mx-2 {
+	margin: 0 1.5rem;
+}
+.mx-3 {
+	margin: 0 2rem;
+}
+.mx-4 {
+	margin: 0 3rem;
+}
+.mx-5 {
+	margin: 0 4rem;
+}
+
+.my-1 {
+	margin: 1rem 0;
+}
+.my-2 {
+	margin: 1.5rem 0;
+}
+.my-3 {
+	margin: 2rem 0;
+}
+.my-4 {
+	margin: 3rem 0;
+}
+.my-5 {
+	margin: 4rem 0;
+}
