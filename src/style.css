@@ -7,18 +7,19 @@
 	}
 }
 
-.header {
+.wrapper {
 	background-color: #4a4a4a;
 	/* background-color: #fff; */
 	color: #fe660b;
 	text-align: center;
 }
 
-.header .grid {
-	grid-template-columns: repeat(3, 1fr);
+.wrapper .grid {
+	grid-template-columns: 1fr 3fr 1fr;
 }
 
 .link {
+	display: inline-block;
 	color: inherit;
 	text-decoration: none;
 }
@@ -26,14 +27,26 @@
 .brand {
 	font-family: "Raleway Dots";
 	justify-self: start;
+	justify-content: start;
 }
 
-.search {
+.header .link {
+	display: block;
+	height: auto;
+	text-align: left;
+}
+
+.formContainer {
+	width: 100%;
 	justify-self: end;
 }
 
+.search {
+	width: 100%;
+}
+
 .form-control {
-	width: 300px;
+	width: 100%;
 	height: 3rem;
 	padding: 5px;
 	background: transparent;
@@ -72,16 +85,16 @@ input[type="text"] {
 	position: relative;
 	width: 40px;
 	height: 40px;
+	justify-self: end;
 }
 
 .cartCounter {
 	position: absolute;
-	top: -30%;
+	top: -20%;
 	left: 10px;
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	background-color: #fe660b;
 	line-height: 1.3;
 	color: #fff;
 	font-weight: bolder;
@@ -208,6 +221,12 @@ img {
 	-o-transform: scaleX(-1);
 }
 
+@media (max-width: 895px) {
+	.formContainer {
+		width: 100%;
+	}
+}
+
 @media (max-width: 860px) {
 	.products .grid {
 		grid-template-columns: repeat(3, 1fr);
@@ -217,6 +236,29 @@ img {
 @media (max-width: 720px) {
 	.products .grid {
 		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 695px) {
+	.formContainer {
+		max-width: 100%;
+	}
+	.wrapper .grid {
+		grid-template-columns: 1fr 1fr;
+	}
+	.brand {
+		order: 1;
+		justify-self: start;
+	}
+
+	.headerCart {
+		order: 2;
+		justify-self: end;
+	}
+
+	.formContainer {
+		order: 3;
+		grid-column: 1/3;
 	}
 }
 
