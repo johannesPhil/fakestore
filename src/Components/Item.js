@@ -16,7 +16,7 @@ export default class Item extends Component {
 							{title}
 						</Link>
 					</div>
-					<div className="details flex">
+					<div className="flex">
 						<span className="price">${price}</span>
 						<div
 							className="cart"
