@@ -1,26 +1,29 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../public/cart.svg";
+import "../assets/cart.svg";
 
 export default class Item extends Component {
-	addToCart = () => {
-		this.props.add(this.props.product);
-	};
 	render() {
+		const { id, image, title, price } = this.props.product;
 		return (
 			<div className="card">
 				<div className="grid">
 					<div className="image">
-						<img src={this.props.product.image} alt="" />
+						<img src={image} alt="" />
 					</div>
-					<Link to={"/product/" + this.props.product.id} className="title">
-						{this.props.product.title}
-					</Link>
+					<div className="title">
+						<Link to={"/product/" + id} className="link titleLink">
+							{title}
+						</Link>
+					</div>
 					<div className="details flex">
-						<span className="price">${this.props.product.price}</span>
-						<span className="cart" onClick={this.addToCart}>
-							<img src="cart.svg" alt="" />
-						</span>
+						<span className="price">${price}</span>
+						<div
+							className="cart"
+							onClick={this.props.add.bind(this, this.props.product)}
+						>
+							<img className="cartImg" src="cart.svg" alt="" />
+						</div>
 					</div>
 				</div>
 			</div>

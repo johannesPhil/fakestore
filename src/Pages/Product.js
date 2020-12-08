@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import Related from "../Components/RelatedCard";
 import "../css/product.css";
-import "../assets/cart.svg";
+import "./cart.svg";
 
 export default class Product extends Component {
-	state = {
-		loading: true,
-		product: [],
-		related: [],
-	};
+	constructor(props) {
+		super(props);
+		this.state = {
+			loading: true,
+			product: [],
+			related: [],
+		};
+	}
 
 	async getProduct(id) {
 		const response = await fetch("https://fakestoreapi.com/products");
@@ -55,12 +57,12 @@ export default class Product extends Component {
 
 	render() {
 		return (
-			<div className="container product">
+			<div className="container">
 				{this.state.loading ? (
 					<div className={"loader"}></div>
 				) : (
-					<div>
-						<div className="grid px-5 my-5">
+					<div className="product py-2">
+						<div className="details grid p-3">
 							<div className="product-image">
 								<img src={this.state.product.image} alt="" />
 							</div>
@@ -69,7 +71,7 @@ export default class Product extends Component {
 									<h3>{this.state.product.title}</h3>
 									<p className=" my-2">{this.state.product.description}</p>
 								</div>
-								<div className="details flex">
+								<div className="flex">
 									<span className="price">${this.state.product.price}</span>
 									<span className="cart" onClick={this.addToCart}>
 										<img src="cart.svg" alt="" />
@@ -77,19 +79,19 @@ export default class Product extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="container related">
-							<h1>Similar Items</h1>
+						<div className="related my-5">
+							<h1 className="my-3">Similar Items</h1>
 							<div className="grid">
-								{this.state.related.map((rel, index) => (
-									<div className="card" key={index}>
+								{this.state.related.map((rel) => (
+									<div className="card" key={rel.id}>
 										<div className="grid">
 											<div className="image">
 												<img src={rel.image} alt="" />
 											</div>
-											<Link to={"" + rel.id} className="title">
+											<Link to={"" + rel.id} className="link titleLink">
 												{rel.title}
 											</Link>
-											<div className="details flex">
+											<div className="flex">
 												<span className="price">${rel.price}</span>
 											</div>
 										</div>

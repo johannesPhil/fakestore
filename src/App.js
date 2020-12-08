@@ -1,36 +1,25 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Header from "./Components/Header";
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
+// import Checkout from "./Pages/Checkout";
 
 export default class App extends Component {
-	// state = {
-	// 	loading: true,
-	// 	products: [],
-	// 	cart: [],
-	// };
-
-	// async componentDidMount() {
-	// 	const response = await fetch("https://fakestoreapi.com/products");
-	// 	const result = await response.json();
-	// 	this.setState({ products: result, loading: false });
-	// 	console.log(this.state.products);
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {
+	// 		checkout: false,
+	// 	};
 	// }
-
-	// addToCart = (product) => {
-	// 	console.log(product);
-	// };
-
 	render() {
 		return (
 			<BrowserRouter>
-				<Header />
 				<Switch>
 					<Route path="/" exact component={Home} />
 					<Route path="/product/:id" exact component={Product} />
 					<Route path="/cart" exact component={Cart} />
+					{/* <Route path="/checkout/:total" exact component={Checkout} /> */}
 
 					{/* <div className="products my-5">
 						<div className="container">
